@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %} deposite {% endblock %}
+
+{% block content %}
+<div class="flex flex-col justify-between items-center">
+    <div class="w-full sm:w-2/3 md:w-1/2">
+        <form class="border shadow-xl p-5" action="" method="post">
+            {% csrf_token %}
+            <div class="flex flex-wrap -mx-3 mb-6">
+                <div class="w-full px-3">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="{{ form.amount.id_for_label }}">
+                        {{ form.amount.label }}
+                    </label> {{ form.amount }} {% if form.amount.errors %} {% for error in form.amount.errors %}
+                    <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
+                    {% endfor %} {% endif %}
+                </div>
+            </div>
+            <button class="px-10 py-2 bg-blue-800 text-white my-5" type="submit">Add Amount</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

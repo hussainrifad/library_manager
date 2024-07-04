@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block title %} register {% endblock %}
+{% block content %}
+    <div class="p-5">
+        <a href="{% url 'borrowlist' %}" class="button px-8 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-blue-500 border border-transparent rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue">See All Borrowed List</a>
+    </div>
+    <div class="w-4/5 flex justify-center items-center shadow-md">
+        <form method="post" novalidate class="mb-7">
+            {% csrf_token %}
+            <h5 class="text-2xl text-center my-5">Profile</h5>
+            <div class="flex flex-wrap -mx-3 mb-6">
+                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="{{ form.first_name.id_for_label }}">
+                        {{ form.first_name.label }}
+                    </label> {{ form.first_name }} {% if form.first_name.errors %} {% for error in form.first_name.errors %}
+                    <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
+                    {% endfor %} {% endif %}
+                </div>
+                <div class="w-full md:w-1/2 px-3">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="{{ form.last_name.id_for_label }}">
+                        {{ form.last_name.label }}
+                    </label> {{ form.last_name }} {% if form.last_name.errors %} {% for error in form.last_name.errors %}
+                    <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
+                    {% endfor %} {% endif %}
+                </div>
+            </div>
+            <div class="flex flex-wrap -mx-3 mb-6">
+                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="{{ form.email.id_for_label }}">
+                        {{ form.email.label }}
+                    </label> {{ form.email }} {% if form.email.errors %} {% for error in form.email.errors %}
+                    <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
+                    {% endfor %} {% endif %}
+                </div>
+                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="{{ form.gender.id_for_label }}">
+                        {{ form.gender.label }}
+                    </label> {{ form.gender }} {% if form.gender.errors %} {% for error in form.gender.errors %}
+                    <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
+                    {% endfor %} {% endif %}
+                </div>
+            </div>
+            {% for hidden_field in form.hidden_fields %} {{ hidden_field.errors }} {{ hidden_field }} {% endfor %}
+            <div class="flex flex-wrap -mx-3 mb-6">
+                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="{{ form.institution.id_for_label }}">
+                        {{ form.institution.label }}
+                    </label> {{ form.institution }} {% if form.institution.errors %} {% for error in form.institution.errors %}
+                    <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
+                    {% endfor %} {% endif %}
+                </div>
+                <div class="w-full md:w-1/2 px-3">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="{{ form.country.id_for_label }}">
+                        {{ form.country.label }}
+                    </label> {{ form.country }} {% if form.country.errors %} {% for error in form.country.errors %}
+                    <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
+                    {% endfor %} {% endif %}
+                </div>
+            </div>
+            <div class="flex flex-wrap -mx-3 mb-6">
+                <div class="w-full md:w-1/2 px-3">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="{{ form.group.id_for_label }}">
+                        {{ form.group.label }}
+                    </label> {{ form.group }} {% if form.group.errors %} {% for error in form.group.errors %}
+                    <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
+                    {% endfor %} {% endif %}
+                </div>
+                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="{{ form.grade.id_for_label }}">
+                        {{ form.grade.label }}
+                    </label> {{ form.grade }} {% if form.grade.errors %} {% for error in form.grade.errors %}
+                    <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
+                    {% endfor %} {% endif %}
+                </div>
+            </div>
+            <button class="button px-8 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-blue-500 border border-transparent rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue">UPDATE DATA</button>
+        </form>
+    </div>
+{% endblock %}
