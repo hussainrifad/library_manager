@@ -83,12 +83,12 @@ WSGI_APPLICATION = 'manage_library.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # DATABASES = {
 #    'default': {
@@ -101,11 +101,11 @@ WSGI_APPLICATION = 'manage_library.wsgi.application'
 #    }
 # }
 
-DATABASES = {
-    'default': dj_database_url.config(
-        default='postgresql://bearllibrary_3l3p_user:1l3O1A9QlHH2mtA6MKDTTDFMWMQ9kGNJ@dpg-cq5pt2g8fa8c738b6740-a.oregon-postgres.render.com/bearllibrary_3l3p',
-    )
-}
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default='postgresql://bearllibrary_3l3p_user:1l3O1A9QlHH2mtA6MKDTTDFMWMQ9kGNJ@dpg-cq5pt2g8fa8c738b6740-a.oregon-postgres.render.com/bearllibrary_3l3p',
+#     )
+# }
 
 
 # Password validation
