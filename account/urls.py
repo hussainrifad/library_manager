@@ -7,5 +7,5 @@ urlpatterns = [
     path('login/', views.UserLoginView.as_view(), name='login'),
     path('logout/', views.userLogOut, name='logout'),
     path('deposite/', views.DepositeView.as_view(), name='deposite'),
-    path('borrow_list/', views.BorrowedListView.as_view(), name='borrowlist')
+    path('borrow_list/<int:id>/', views.BorrowedListView.as_view(), name='borrowlist')
 ]

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import UserInformationForm, UserInformationUpdateForm, DepositeForm
 from .models import UserInformation, BorrowItem
+from django.contrib.auth.models import User
 from django.contrib.auth import login, logout
 from django.views.generic import View, CreateView, ListView
 from django.contrib.auth.views import LoginView
@@ -54,7 +55,7 @@ class UserLoginView(LoginView):
     def get_success_url(self):
         return reverse_lazy('homepage')
     
-def userLogOut(LoginRequiredMixin, request):
+def userLogOut(request):
     if request.user.is_authenticated:
         logout(request)
     return redirect('homepage')
@@ -80,4 +81,10 @@ class DepositeView(LoginRequiredMixin, View):
 class BorrowedListView(LoginRequiredMixin, ListView):
     model = BorrowItem
     template_name = 'borrowed.html'
-    context_object_name = 'borrowedItem'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        object_id = self.kwargs.get('id')
+        user = User.objects.get(id=object_id)
+        context['borrowedItem'] = BorrowItem.objects.filter(borrowed_by=user)
+        return context

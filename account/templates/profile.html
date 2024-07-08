@@ -3,7 +3,7 @@
 {% block title %} register {% endblock %}
 {% block content %}
     <div class="p-5">
-        <a href="{% url 'borrowlist' %}" class="button px-8 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-blue-500 border border-transparent rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue">See All Borrowed List</a>
+        <a href="{% url 'borrowlist' user.id %}" class="button px-8 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-blue-500 border border-transparent rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue">See All Borrowed List</a>
     </div>
     <div class="w-4/5 flex justify-center items-center shadow-md">
         <form method="post" novalidate class="mb-7">
