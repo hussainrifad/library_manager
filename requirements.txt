@@ -9,6 +9,7 @@ MouseInfo
 pillow
 pipenv
 platformdirs
+psycopg2
 PyAutoGUI
 PyGetWindow
 PyMsgBox
