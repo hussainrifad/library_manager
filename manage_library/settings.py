@@ -103,7 +103,7 @@ WSGI_APPLICATION = 'manage_library.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://bearllibrary_user:n4DcYMJMVc1vGGIKng1aE4VmTeDxAofG@dpg-cq5oiq88fa8c738abs50-a.oregon-postgres.render.com/bearllibrary',
+        default='postgresql://bearllibrary_j9i1_user:Rm5JoWoGwTOvxSkQUXBNSoH83vToCFw6@dpg-cq5p7j08fa8c738aotm0-a.singapore-postgres.render.com/bearllibrary_j9i1',
     )
 }
 
