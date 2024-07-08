@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-5=m1urq95yx^5axqhp6@2m&_b*s63p@1kucmo=^*x@$c@7(vhl
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://library-manager-e4v8.onrender.com', 'https://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://library-manager-e4v8.onrender.com','https://*.127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
